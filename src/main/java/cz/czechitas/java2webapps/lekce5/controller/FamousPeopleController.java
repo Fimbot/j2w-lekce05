@@ -53,7 +53,7 @@ public class FamousPeopleController {
 
   @PostMapping(value = "/", params = {"id"})
   public String delete(int id) {
-    people.remove(id);
+    if(people.size()>0)people.remove(id);
     return "redirect:/";
   }
 }
